@@ -1,23 +1,3 @@
-# remirror-contrib-example
-
-## Error
-
-`this` is undefined within `collaboration-extention.ts`
-
-```ts
-  /**
-   * Called whenever a transaction occurs.
-   */
-  public onTransaction({ getState }: OnTransactionParams) {
-    this.getSendableSteps(getState()); // <<< 'this' is undefined
-  }
-```
-
-## Editor Assembly
-
-The following can be found at `simple-editor/index.tsx`
-
-```ts
 import {
     ManagedRemirrorProvider,
     RemirrorManager,
@@ -62,4 +42,3 @@ const InnerEditor: FC = () => {
         />
     )
 };
-```
