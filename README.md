@@ -1,5 +1,7 @@
 # remirror-contrib-example
 
+A repo to aid in the reporting of https://github.com/ifiokjr/remirror/issues/174
+
 ## Error
 
 `this` is undefined within `collaboration-extention.ts`
