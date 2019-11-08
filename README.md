@@ -13,6 +13,20 @@
   }
 ```
 
+```
+react-dom.development.js:12194 Uncaught TypeError: Cannot read property 'getSendableSteps' of undefined
+    at onTransaction (extension-collaboration.esm.js:147)
+    at eval (core.esm.js:1344)
+    at Array.forEach (<anonymous>)
+    at ExtensionManager.onTransaction (core.esm.js:1342)
+    at onUpdate (react.esm.js:483)
+    at Remirror.eval (react.esm.js:515)
+    at callCallback (react-dom.development.js:13811)
+    at commitUpdateEffects (react-dom.development.js:13849)
+    at commitUpdateQueue (react-dom.development.js:13837)
+    at commitLifeCycles (react-dom.development.js:22101)
+```
+
 ## Editor Assembly
 
 The following can be found at `simple-editor/index.tsx`
