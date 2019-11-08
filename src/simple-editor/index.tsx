@@ -5,27 +5,24 @@ import {
     useRemirrorContext,
 } from "@remirror/react";
 
-import { CollaborationExtension, OnSendableReceivedParams } from "@remirror/extension-collaboration";
+import {CollaborationExtension, OnSendableReceivedParams} from "@remirror/extension-collaboration";
 
-import React, { FC } from "react";
+import React, {FC} from "react";
 
 export const SimpleEditor: FC = () => {
     return (
-        <RemirrorManager>
-            <RemirrorExtension
-              Constructor={CollaborationExtension}
-              clientID='fooBar'
-              onSendableReceived={(p: OnSendableReceivedParams) => {
-                  debugger;
-                  console.log(p)
-              }}
-            />
-            <ManagedRemirrorProvider>
-                <>
-                    <InnerEditor/>
-                </>
-            </ManagedRemirrorProvider>
-        </RemirrorManager>
+      <RemirrorManager>
+          <RemirrorExtension
+            Constructor={CollaborationExtension}
+            clientID='fooBar'
+            onSendableReceived={(p: OnSendableReceivedParams) => {
+                console.log('onSendableReceived', p);
+            }}
+          />
+          <ManagedRemirrorProvider>
+              <InnerEditor/>
+          </ManagedRemirrorProvider>
+      </RemirrorManager>
     )
 };
 
@@ -34,11 +31,9 @@ export const SimpleEditor: FC = () => {
  * Any component rendered has access to the remirror context.
  */
 const InnerEditor: FC = () => {
-    const { getRootProps } = useRemirrorContext();
+    const {getRootProps} = useRemirrorContext();
 
     return (
-        <div
-          {...getRootProps()} data-testid='remirror-wysiwyg-editor'
-        />
+      <div {...getRootProps()} data-testid='remirror-wysiwyg-editor'/>
     )
 };
